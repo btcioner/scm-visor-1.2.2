@@ -1,0 +1,36 @@
+<!-- <h1>
+    {{vm.helloText}}
+</h1> -->
+<div id="main-placas">
+    <div class="widget-group" layout="row" flex="100" layout-wrap>
+        <!-- WIDGET 11 -->
+        <ms-widget layout="row" flex="100">
+            <!-- Front -->
+            <ms-widget-front class="white-bg">
+                <table class="dataTable row-border hover" datatable="ng" dt-options="vm.table.dtOptions">
+                    <thead>
+                        <tr>
+                            <th class="secondary-text" ng-repeat="column in ::vm.table.columns">
+                                <div class="table-header">
+                                    <span class="column-title">{{column.title}}</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in ::vm.placas">
+                            <td ng-repeat="cell in row">
+                                <img class="avatar" ng-if="$index === 0" ng-src="assets/images/avatars/{{cell}}">
+                                <span ng-if="$index != 0">
+                                                    {{cell}}
+                                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ms-widget-front>
+            <!-- / Front -->
+        </ms-widget>
+        <!-- / WIDGET 11 -->
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<md-list-item class="md-3-line" ng-repeat="placa in vm.placas | orderBy:'-timestamp'">
+    <!-- ng-click="vm.goFotos(placa)" -->
+    <!-- <md-checkbox ng-model="item.done"></md-checkbox> -->
+    <img class="md-avatar scm-avatar" ng-src="https://www.vividracing.com/catalog/images/CE-458-CFH.jpg">
+    <div class="md-list-item-text">
+        <h3>{{placa.placa}}</h3>
+        <p>{{placa.timestamp}}</p>
+        <span scm-time-ago unixms="{{placa.timestamp}}"  color="blue"></span>
+    </div>
+    <!--   <md-icon md-svg-icon="communication:phone"  aria-label="Open Chat" class="md-secondary md-hue-3" ></md-icon>
+         <md-icon md-svg-icon="communication:phone" aria-label="Open Chat" class="md-secondary md-hue-3 second-icon-right" >
+        </md-icon> -->
+    <md-icon md-svg-icon="core:alarm-add" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"></md-icon>
+</md-list-item>
