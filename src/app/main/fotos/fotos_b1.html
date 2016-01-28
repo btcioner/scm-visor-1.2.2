@@ -1,0 +1,40 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <span>My App's Title</span>
+        <!-- fill up the space between left and right area -->
+        <span flex></span>
+        <md-button>
+            Right Bar Button
+        </md-button>
+    </div>
+</md-toolbar>
+<!-- CENTER -->
+<div class="center" flex>
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="column" layout-align="space-between">
+        <div layout="row" layout-align="space-between">
+            <div>
+                <span class="md-display-1 font-weight-300">{{vm.placa}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- / HEADER -->
+    <!-- CONTENT -->
+    <div class="content">
+        <!-- MS-CARD -->
+        <!--  <ms-card template="'app/core/directives/ms-card/templates/template-4/template-4.html'" ng-model="vm.card">
+        </ms-card> -->
+        <!-- / MS-CARD -->
+        <md-content layout="column" layout-align="center center" flex ms-scroll>
+            <!-- <div> -->
+            <md-card flex-offset-gt-xs="16" flex="33" ng-repeat="foto in vm.fotos | orderBy:'-timestamp'">
+                <img ng-src="data:image/jpeg;base64,{{foto.base64Data}}" class="md-card-image mw" alt="Washed Out">
+            </md-card>
+            <!-- </div> -->
+        </md-content>
+    </div>
+    <!-- / CONTENT -->
+</div>
+<!-- / CENTER -->
+<!-- FIXED -->
+<ms-theme-options></ms-theme-options>

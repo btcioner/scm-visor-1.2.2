@@ -6,13 +6,14 @@ var fbP;
         .module('app.placas')
         .factory('PlacasService', PlacasService);
 
-    PlacasService.$inject = ['FBROOT', '$firebaseArray', 'exception'];
+    PlacasService.$inject = ['$q','FBROOT', '$firebaseArray', 'exception'];
 
     /* @ngInject */
-    function PlacasService(FBROOT, $firebaseArray, exception) {
+    function PlacasService($q,FBROOT, $firebaseArray, exception) {
         var _placasArray = null;
         var _placasRoot = FBROOT.child('inspecciones');
         var service = {
+            getPlaca:getPlaca,
             getPlacas: getPlacas
         };
         return service;
@@ -28,13 +29,18 @@ var fbP;
 
             return $firebaseArray(query).$loaded()
                 .then(onLoadedOk)
-                .catch(exception.catcher('cant get array of notifications'));
+                .catch(exception.catcher('cant get array of placas'));
 
             function onLoadedOk(data) {
                 _placasArray = data;
                 fbP = _placasArray;
                 return _placasArray;
             }
+        }
+
+
+        function getPlaca ($id) {
+            // body...
         }
     }
 })();

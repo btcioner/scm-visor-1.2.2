@@ -1,0 +1,41 @@
+<div class="page-layout carded fullwidth" layout="row">
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center" layout="column" layout-align="center center" flex>
+        <!-- CONTENT HEADER -->
+        <!-- <div class="header">
+            <span class="h2 white-fg">Fullwidth with independent scroll</span>
+        </div> -->
+        <!-- / CONTENT HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card " layout="column" flex>
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar md-accent-bg" layout="row" layout-align="start center">
+                <span class="md-display-1 font-weight-300">{{vm.placa}}</span>
+                <span flex></span>
+                <md-button>
+                    Right Bar Button
+                </md-button>
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+            <!-- CONTENT -->
+            <md-content layout="column" layout-align="start center" flex ms-scroll>
+                <!-- <div> -->
+                <md-card flex-offset-gt-xs="16" flex="33" ng-repeat="foto in vm.fotos | orderBy:'-timestamp'">
+                    <img ng-src="data:image/jpeg;base64,{{foto.base64Data}}" class="md-card-image mw" alt="Washed Out">
+                </md-card>
+                <!-- </div> -->
+            </md-content>
+            <!--  <md-content layout="column" layout-align="start center" class="content" flex ms-scroll>
+                <md-card flex="60"  ng-repeat="foto in vm.fotos | orderBy:'-timestamp'">
+                    <img ng-src="data:image/jpeg;base64,{{foto.base64Data}}" class="md-card-image mw" alt="Washed Out">
+                </md-card>
+            </md-content> -->
+            <!-- / CONTENT -->
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!-- / CENTER -->
+</div>

@@ -1,0 +1,59 @@
+<div class="page-layout carded fullwidth" layout="row">
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg md-accent-bg"></div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CENTER -->
+    <div class="center" layout="column" flex>
+        <!-- CONTENT HEADER -->
+        <!-- / CONTENT HEADER -->
+        <!-- CONTENT CARD -->
+        <div class="content-card" layout="column" flex>
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar md-accent-bg" layout="row" layout-align="start center">
+                <span class="md-display-1 font-weight-300">{{vm.placa}}</span>
+                <span flex></span>
+                <md-button>
+                    <md-icon class="fold-toggle s18" md-font-icon="icon-backburger" hide show-gt-sm ng-click="vm.openSidenav()"></md-icon>
+                </md-button>
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+            <!-- CONTENT -->
+            <md-content layout="column" layout-align="start center" flex ms-scroll>
+                <!-- <div> -->
+                <md-card flex-offset-gt-xs="16" flex="33" ng-repeat="foto in vm.fotos | orderBy:'-timestamp'">
+                    <img ng-src="data:image/jpeg;base64,{{foto.base64Data}}" class="md-card-image mw" alt="Washed Out">
+                </md-card>
+                <!-- </div> -->
+            </md-content>
+            <!-- / CONTENT -->
+        </div>
+        <!-- / CONTENT CARD -->
+    </div>
+    <!--  <div flex>
+        <h1>oelo</h1>
+    </div> -->
+    <md-sidenav md-component-id="scmr" class="md-sidenav-right">
+        <!-- <form>
+            <md-input-container>
+                <label for="testInput">Test input</label>
+                <input id="testInput" type="text" ng-model="data" md-autofocus>
+            </md-input-container>
+        </form> -->
+        <md-tabs>
+            
+            <md-tab>
+                <md-tab-label>
+                    <h3>Asesor</h3>
+                </md-tab-label>
+                <md-tab-body>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    </p>
+                </md-tab-body>
+            </md-tab>
+            <md-tab label="Tab #2"></md-tab>
+            <md-tab label="Tab #3"></md-tab>
+        </md-tabs>
+    </md-sidenav>
+    <!-- / CENTER -->
+</div>

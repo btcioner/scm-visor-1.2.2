@@ -27,6 +27,9 @@
             // 'app.sample',
 
             //placas
-            'app.placas'
+            'app.placas',
+
+            //fotos
+            'app.fotos'
         ]);
 })();

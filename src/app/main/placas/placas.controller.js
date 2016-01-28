@@ -6,12 +6,12 @@
         .controller('PlacasController', PlacasController);
 
     /** @ngInject */
-    function PlacasController(PlacasService) /*SampleData*/ {
+    function PlacasController(PlacasService, $state) /*SampleData*/ {
         var vm = this;
 
         // Data
         vm.helloText = 'placas'; //SampleData.data.helloText;
-
+ vm.goFotos = goFotos;
         vm.table = {
             columns: [{
                 title: 'ready'
@@ -59,6 +59,13 @@
             function onGetPlacas(placas) {
                 vm.placas = placas;
             }
+        }
+
+        function goFotos(objPlaca) {
+            $state.go("app.placas-detail", {
+                idInspeccion: objPlaca.$id,
+                placa: objPlaca.placa
+            });
         }
 
         // Methods

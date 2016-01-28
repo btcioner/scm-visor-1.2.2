@@ -1,4 +1,4 @@
-<md-list-item class="md-3-line" ng-repeat="placa in vm.placas | orderBy:'-timestamp'">
+<md-list-item class="md-3-line" ng-repeat="placa in vm.placas | orderBy:'-timestamp'" ng-click="vm.goFotos(placa)">
     <!-- ng-click="vm.goFotos(placa)" -->
     <!-- <md-checkbox ng-model="item.done"></md-checkbox> -->
     <img class="md-avatar scm-avatar" ng-src="https://www.vividracing.com/catalog/images/CE-458-CFH.jpg">
